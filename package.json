@@ -1,6 +1,6 @@
 {
   "name": "generator-tsc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Create Libs in TypeScript",
   "homepage": "https://github.com/sidoshi/generator-tsc",
   "author": {
