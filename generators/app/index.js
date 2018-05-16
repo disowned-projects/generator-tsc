@@ -34,7 +34,6 @@ module.exports = class extends Generator {
     const templates = [
       'src/index.test.ts',
       'src/index.ts',
-      '.gitignore',
       '.travis.yml',
       'jest.config.js',
       'LICENCE',
@@ -51,6 +50,11 @@ module.exports = class extends Generator {
         this.destinationPath(template),
         this.props
       )
+    )
+
+    this.fs.copy(
+      this.templatePath('gitignore'),
+      this.destinationPath('.gitignore')
     )
 
     const packageJson = getPackageJson(this.props)
