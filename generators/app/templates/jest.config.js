@@ -1,9 +1,9 @@
 module.exports = {
-  collectCoverageFrom: ['src/**/*.ts'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   transform: {
-    '.ts': '<rootDir>/node_modules/ts-jest/preprocessor.js',
+    '.(ts|tsx)': '<rootDir>/node_modules/ts-jest/preprocessor.js',
   },
-  testMatch: ['<rootDir>/**/?(*.)(spec|test).ts'],
+  testMatch: ['<rootDir>/**/?(*.)(spec|test).ts?(x)'],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
-  moduleFileExtensions: ['ts', 'js', 'json'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
 }

@@ -19,9 +19,9 @@ module.exports = ({
     scripts: {
       build: 'tsc -p tsconfig.prod.json',
       start: 'node dist',
-      dev: "nodemon -w 'src' -e 'ts'  -x 'clear && ts-node src' -q",
-      format: "prettier --write 'src/**/*.ts'",
-      lint: "tslint -p . -c tslint.json 'src/**/*.ts'",
+      dev: "nodemon -w 'src' -e 'ts tsx'  -x 'clear && ts-node src' -q",
+      format: "prettier --write 'src/**/*.{ts,tsx}' 'README.md'",
+      lint: "tslint -p . -c tslint.json 'src/**/*.{ts,tsx}'",
       test: 'jest',
       prebuild: 'rimraf dist',
       version: 'npm-run-all --parallel lint build --aggregate-output',
@@ -29,7 +29,11 @@ module.exports = ({
       precommit: 'lint-staged',
     },
     'lint-staged': {
-      '*.ts': ['prettier --write ', 'tslint -p . -c tslint.json ', 'git add'],
+      '**/*.{ts,tsx}': [
+        'prettier --write ',
+        'tslint -p . -c tslint.json ',
+        'git add',
+      ],
     },
   }
 
